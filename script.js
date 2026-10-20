@@ -3,7 +3,7 @@
 // CONFIGURE aqui o nome da loja e o link verdadeiro de atendimento.
 const CONFIG = {
   nome: "Next Stories"
-  // Discord: https://https://discord.com/channels/1561336092274204732/1561336095185174662
+  // Discord: "https://discord.com/channels/1561336092274204732/1561336095185174662
   linkTicket: "https://discord.com/channels/1561336092274204732/1561336095185174662
 };
 
@@ -11,17 +11,17 @@ const CONFIG = {
 const PLANOS = {
   basico: {
     nome: "Básico",
-    preco: 19.90,
+    preco: 10,00,
     descricao: "Plano para começar seu projeto."
   },
   profissional: {
     nome: "Profissional",
-    preco: 39.90,
+    preco: 20,00,
     descricao: "Plano para projetos em crescimento."
   },
   premium: {
     nome: "Premium",
-    preco: 69.90,
+    preco: 30,00,
     descricao: "Plano com recursos mais completos."
   }
 };
