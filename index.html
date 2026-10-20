@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10091b">
+<meta name="description" content="Next Stories — hospedagem SA-MP e bots para Discord.">
+<title>Next Stories | Hospedagem & Bots</title>
+<style>
+:root{--bg:#090610;--panel:#140e20;--panel2:#1b1230;--purple:#9b5cff;--pink:#d3a5ff;--text:#f8f4ff;--muted:#b8abc9;--line:#302044;--green:#67e8b5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#24103d 0%,var(--bg) 48%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#0b0713eF;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:1.16rem;font-weight:900;letter-spacing:.3px}.brand span{color:var(--purple)}nav{display:flex;gap:20px;color:var(--muted);font-size:.92rem}nav a:hover{color:white}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid transparent;border-radius:12px;background:linear-gradient(135deg,#a66aff,#7436d9);color:#fff;font-weight:800;cursor:pointer;transition:.2s;box-shadow:0 8px 24px #8c43e52b}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:transparent;border-color:#67478b;box-shadow:none}.btn.small{padding:9px 12px;font-size:.9rem}
+.hero{padding:76px 0 62px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}.eyebrow{display:inline-block;color:var(--pink);background:#9b5cff18;border:1px solid #9b5cff55;padding:6px 11px;border-radius:999px;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.03;letter-spacing:-.055em;margin:18px 0}h1 em{font-style:normal;color:var(--pink)}.lead{color:var(--muted);font-size:1.1rem;max-width:590px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.mini-note{font-size:.82rem;color:var(--muted);margin-top:15px}
+.visual{border:1px solid #50316d;border-radius:26px;padding:24px;background:linear-gradient(145deg,#24123a,#100a19);box-shadow:0 25px 70px #0007;position:relative;overflow:hidden}.visual:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#9b5cff33;filter:blur(35px);right:-70px;top:-70px}.terminal{position:relative;border:1px solid #443056;background:#0b0811;border-radius:15px;padding:18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88rem}.dots{display:flex;gap:6px;margin-bottom:20px}.dots i{width:8px;height:8px;border-radius:50%;background:#9b5cff}.term-line{color:#9fe8c7;margin:9px 0}.term-muted{color:#a897bd}.status{display:inline-block;background:#15362d;color:var(--green);border-radius:7px;padding:4px 8px;font-size:.76rem;margin-top:10px}
+section{padding:54px 0}.section-head{max-width:680px;margin-bottom:25px}.kicker{color:var(--pink);font-weight:800;text-transform:uppercase;font-size:.78rem;letter-spacing:.13em}h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;letter-spacing:-.035em;margin:8px 0 12px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:linear-gradient(145deg,#191025,#100b18);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;min-height:300px}.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#9b5cff20;border:1px solid #9b5cff55;font-size:1.45rem}.card h3{font-size:1.35rem;margin:18px 0 8px}.card p{color:var(--muted);margin:0 0 15px}.features{list-style:none;padding:0;margin:8px 0 22px;color:#e8dff4}.features li{margin:8px 0}.features li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}.card .btn{margin-top:auto;width:100%}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:20px;border-radius:17px;background:#140e20;border:1px solid var(--line)}.number{font-weight:900;color:var(--pink);font-size:.9rem}.step h3{margin:8px 0}.step p{color:var(--muted);font-size:.95rem;margin:0}
+.contact{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:28px;border:1px solid #57377a;border-radius:22px;background:linear-gradient(120deg,#24113c,#130d1d)}.contact h2{margin-top:0}.contact p{margin-bottom:0;color:var(--muted)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.notice{margin-top:18px;padding:13px 15px;border:1px solid #6b4b8c;border-radius:12px;color:#d9c8ed;background:#9b5cff0d;font-size:.88rem}
+@media(max-width:760px){nav{display:none}.hero{grid-template-columns:1fr;padding-top:52px}.visual{order:-1}.grid,.steps{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.card{min-height:unset}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#inicio">NEXT <span>STORIES</span></a>
+<nav aria-label="Navegação"><a href="#produtos">Produtos</a><a href="#como-comprar">Como comprar</a><a href="#contato">Suporte</a></nav>
+<a class="btn small" href="#produtos">Ver produtos ↗</a>
+</div></header>
+<main>
+<div class="wrap hero" id="inicio">
+<div>
+<span class="eyebrow">Tecnologia • Comunidade • RP</span>
+<h1>Sua próxima história começa <em>aqui.</em></h1>
+<p class="lead">Soluções digitais para sua comunidade: hospedagem SA-MP e bots para Discord, com atendimento direto e pedidos confirmados manualmente.</p>
+<div class="hero-actions"><a class="btn" href="#produtos">Explorar produtos →</a><a class="btn secondary" href="#como-comprar">Como funciona</a></div>
+<p class="mini-note">Atendimento pelo Discord · Pagamento via Pix</p>
+</div>
+<div class="visual" aria-label="Ilustração de painel de tecnologia">
+<div class="terminal"><div class="dots"><i></i><i></i><i></i></div>
+<div class="term-muted">// NEXT STORIES • CONTROL PANEL</div>
+<div class="term-line">iniciando_serviços();</div>
+<div class="term-line">› comunidade: online</div>
+<div class="term-line">› suporte: disponível</div>
+<div class="term-line">› pedido: aguardando confirmação</div>
+<span class="status">● SISTEMA DE PEDIDOS MANUAL</span>
+</div>
+</div>
+</div>
+<section id="produtos"><div class="wrap">
+<div class="section-head"><div class="kicker">Catálogo</div><h2>Escolha o que sua comunidade precisa.</h2><p class="muted">Selecione um produto e envie seu pedido. Vamos combinar os detalhes e confirmar o pagamento antes da entrega.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">🎮</div><h3>Hospedagem SA-MP</h3><p>Uma opção para colocar seu servidor de roleplay no ar. Consulte disponibilidade, configuração e recursos antes de fechar.</p><ul class="features"><li>Consulta de planos e recursos</li><li>Atendimento para configuração</li><li>Pedido confirmado manualmente</li></ul><button class="btn order" data-product="Hospedagem SA-MP">Solicitar hospedagem ↗</button></article>
+<article class="card"><div class="icon">🤖</div><h3>Bots para Discord</h3><p>Consulte bots e soluções para organizar, moderar e melhorar a experiência da sua comunidade.</p><ul class="features"><li>Consulte funções disponíveis</li><li>Orientação para configuração</li><li>Entrega combinada pelo suporte</li></ul><button class="btn order" data-product="Bots para Discord">Solicitar bot ↗</button></article>
+</div>
+<div class="notice">Os produtos, preços, prazos e recursos são confirmados com você antes do pagamento. Não faça Pix sem receber os dados oficiais do vendedor e confirmar o pedido.</div>
+</div></section>
+<section id="como-comprar"><div class="wrap">
+<div class="section-head"><div class="kicker">Compra simples</div><h2>Como fazer seu pedido</h2><p class="muted">Por enquanto, o site abre uma mensagem de pedido para você enviar pelo Discord. A confirmação e a entrega são manuais.</p></div>
+<div class="steps">
+<div class="step"><div class="number">PASSO 01</div><h3>Escolha o produto</h3><p>Clique no botão do produto e preencha os detalhes na mensagem que será preparada.</p></div>
+<div class="step"><div class="number">PASSO 02</div><h3>Confirme os detalhes</h3><p>Converse com o suporte para conferir preço, disponibilidade, prazo e forma de entrega.</p></div>
+<div class="step"><div class="number">PASSO 03</div><h3>Pague via Pix</h3><p>Faça o pagamento somente após receber e conferir os dados oficiais. Envie o comprovante para conferência.</p></div>
+</div>
+</div></section>
+<section id="contato"><div class="wrap"><div class="contact">
+<div><div class="kicker">Precisa de ajuda?</div><h2>Vamos conversar.</h2><p>Entre no nosso Discord para tirar dúvidas, consultar valores e acompanhar seu pedido.</p></div>
+<a class="btn" id="discord-link" href="#produtos">Configurar link do Discord ↗</a>
+</div>
+<p class="mini-note">O link do Discord ainda precisa ser configurado pelo dono da loja antes de publicar.</p>
+</div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>NEXT STORIES</strong> <span>— hospedagem & soluções digitais</span></div><div>© <span id="year"></span> Next Stories. Todos os direitos reservados.</div></div></footer>
+<script>
+/* CONFIGURAÇÃO: troque o valor abaixo pelo convite do seu servidor Discord.
+   Exemplo: https://discord.gg/SEUCONVITE */
+const DISCORD_INVITE = "";
+document.getElementById("year").textContent = new Date().getFullYear();
+const discordLink = document.getElementById("discord-link");
+function openDiscordOrAlert(message){
+  if(DISCORD_INVITE && DISCORD_INVITE.startsWith("https://discord.gg/")){
+    const full = message ? DISCORD_INVITE : DISCORD_INVITE;
+    window.open(full, "_blank", "noopener,noreferrer");
+  } else {
+    alert("O link do Discord ainda não foi configurado. Peça ao dono da loja para adicionar o convite do servidor no arquivo index.html.");
+  }
+}
+discordLink.addEventListener("click", function(e){e.preventDefault();openDiscordOrAlert("");});
+document.querySelectorAll(".order").forEach(btn => btn.addEventListener("click", () => {
+  const product = btn.dataset.product;
+  const text = `Olá! Quero fazer um pedido na Next Stories.\nProduto: ${product}\nMeu usuário do Discord: \nDetalhes que preciso: \nPor favor, informe preço, disponibilidade e os dados oficiais para pagamento via Pix. Vou aguardar a confirmação antes de pagar.`;
+  if(DISCORD_INVITE && DISCORD_INVITE.startsWith("https://discord.gg/")){
+    if(navigator.share){navigator.share({title:"Pedido — Next Stories", text}).catch(()=>{});}
+    window.open(DISCORD_INVITE, "_blank", "noopener,noreferrer");
+    alert("Mensagem de pedido preparada. Envie-a no canal de atendimento do Discord.");
+  } else {
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(()=>alert("Mensagem de pedido copiada! Configure o convite do Discord no site e envie a mensagem no canal de atendimento.")).catch(()=>prompt("Copie sua mensagem de pedido:",text));
+    } else { prompt("Copie sua mensagem de pedido:",text); }
+  }
+}));
+</script>
+</body></html>
