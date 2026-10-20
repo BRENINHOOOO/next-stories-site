@@ -2,9 +2,8 @@
 
 // CONFIGURE aqui o nome da loja e o link verdadeiro de atendimento.
 const CONFIG = {
-  nome: "Next Stories",
-  // WhatsApp: https://wa.me/55DDDNUMERO
-  // Discord: https://discord.com/channels/ID_DO_SERVIDOR/ID_DO_CANAL
+  nome: "Next Stories"
+  // Discord: https://https://discord.com/channels/1561336092274204732/1561336095185174662
   linkTicket: "https://discord.com/channels/1561336092274204732/1561336095185174662
 };
 
